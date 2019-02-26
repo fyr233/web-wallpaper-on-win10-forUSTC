@@ -83,7 +83,8 @@ Chart_netspeed.setOption(option = {
                 show: true,
                 textStyle: {
                     color: '#EEEEEE',
-                    fontSize:16
+                    fontSize:18,
+                    fontFamily: "'Microsoft YaHei', '微软雅黑', Arial, Verdana, 'sans-serif'",
                 }
             },
             boundaryGap : false,
@@ -98,7 +99,8 @@ Chart_netspeed.setOption(option = {
                 show: true,
                 textStyle: {
                     color: '#EEEEEE',
-                    fontSize:16
+                    fontSize:18,
+                    fontFamily: "'Microsoft YaHei', '微软雅黑', Arial, Verdana, 'sans-serif'",
                 }
             },
         },
@@ -109,7 +111,8 @@ Chart_netspeed.setOption(option = {
                 show: true,
                 textStyle: {
                     color: '#EEEEEE',
-                    fontSize:16
+                    fontSize:18,
+                    fontFamily: "'Microsoft YaHei', '微软雅黑', Arial, Verdana, 'sans-serif'",
                 }
             },
         }
