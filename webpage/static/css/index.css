@@ -1,5 +1,42 @@
 @charset "utf-8";
 
+/*总体布局*/
+.clock{
+  position:absolute;
+  width:550px;
+  height:180px;
+  top:4%;
+  left:83%;
+  margin: 0% 0 0 0%;
+}
+
+.test1{
+  position:absolute;
+  width:1000px;
+  height:800px;
+  top:3%;
+  left:55%;
+  margin: 0% 0 0 0%;
+}
+
+.timetable{
+  position:absolute;
+  width:1300px;
+  top:3%;
+  left:14.5%;
+  margin: 0% 0 0 0%;
+  background:#141414;
+}
+
+.jwcnews{
+  position:absolute;
+  top:16%;
+  left:82%;
+  margin: 0% 0 0 0%;
+  background:#141414;
+}
+
+/*以下是课表css*/
 .wrapper,
 .course-table{
   font-size: 18px;
@@ -566,10 +603,6 @@ table.timetable tbody th.span:after {
     flex: 0 0 auto;
   }
 
-  .c{
-    
-  }
-
   .c .classes{
     display: flex;
     flex-wrap: wrap;
@@ -578,4 +611,126 @@ table.timetable tbody th.span:after {
   .c .classes li{
     margin: 0 0.2em;
   }
+}
+
+/*以下是教务处通知的css*/
+.front-page-main .front-page-a .notice-fp {
+    margin: 0;
+    width: auto;
+    float: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.common-title, .edu-fp header, .footer .info, .notice-fp header {
+  padding: 0 .5em;
+}
+
+.notice-fp header {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.notice-fp header h2 {
+  float: left;
+  margin: 0 0 .5em;
+  color: #115d8a;
+  font-size: 50px;
+}
+
+.notice-fp header:after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right,#EEEEEE 40%,#d3d3d3 40%,#bbbbbb 80%,#8f8f8f 80%);
+  clear: both;
+}
+
+.notice-fp header h2 a {
+  color: #EEEEEE;
+  text-decoration: none;
+  transition: all .2s ease;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
+.front-page-main .front-page-a .notice-fp ul.article-list {
+  display: -ms-flexbox;
+  /*display: flex;*/
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.notice-fp ul li, .notice-fp ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.front-page-main .front-page-a .notice-fp ul.article-list li {
+  float: none;
+  box-sizing: border-box;
+  -ms-flex: 1 0 250px;
+  /*flex: 1 0 250px;*/
+  min-width: 200px;
+  margin: 0;
+}
+
+.notice-fp ul.article-list li {
+  float: left;
+  display: block;
+  width: 600px;
+  padding: 8px;
+  margin-bottom: 4px;
+  font-size: 22px;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
+.notice-fp ul.article-list li .cat-tags {
+  top: -1px;
+  position: relative;
+}
+
+ul.with-tag li .cat-tag.notice-teaching {
+  background-color: #115d8a;
+}
+
+ul.article-list li .cat-tags .cat-tag {
+  font-size: .8em;
+  padding: 0 .4em;
+  margin-left: .2em;
+  color: #fff;
+  background: #aaa;
+  text-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.notice-fp ul.article-list li .post {
+  padding: 0 .3em;
+}
+
+.notice-fp ul.article-list li .post a {
+  color: #EEEEEE;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+ul.article-list li .date, ul.article-list li .views {
+  color: #EEEEEE;
+  padding-left: .4em;
+  white-space: nowrap;
+  font-size: .8em;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.date .fa {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

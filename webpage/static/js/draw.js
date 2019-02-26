@@ -1,6 +1,6 @@
 // 基于准备好的dom，初始化echarts实例
 var Chart_test1 = echarts.init(document.getElementById('test1'), 'mydark');
-var Chart_showtime = echarts.init(document.getElementById('time'), 'mydark');
+var Chart_showtime = echarts.init(document.getElementById('clock'), 'mydark');
 
 // 指定图表的配置项和数据
 
