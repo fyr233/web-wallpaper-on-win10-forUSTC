@@ -23,7 +23,7 @@
   position:absolute;
   width:1400px;
   top:3%;
-  left:14.5%;
+  left:12.5%;
   margin: 0% 0 0 0%;
   background:#141414;
 }
@@ -34,6 +34,15 @@
   left:82%;
   margin: 0% 0 0 0%;
   background:#141414;
+}
+
+.netspeed{
+  position:absolute;
+  width:1300px;
+  height:600px;
+  top:65%;
+  left:35%;
+  margin: 0% 0 0 0%;
 }
 
 /*以下是课表css*/
