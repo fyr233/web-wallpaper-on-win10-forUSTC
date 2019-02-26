@@ -1,0 +1,581 @@
+@charset "utf-8";
+
+.wrapper,
+.course-table{
+  font-size: 18px;
+  page-break-after: always;
+  font-family: 'YH';
+}
+.wrapper *, .course-table *{
+  box-sizing: content-box;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
+  margin: 0;
+  padding: 0;
+}
+.container span.form-control-next {
+  display: block;
+  padding: 6px 0px;
+}
+
+table.timetable {
+  --td-size-1: 90px;
+  --td-size-2: 70px;
+  --gap-size: 2px;
+  width: 100%;
+  height: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  /*border: 1mm solid #DDD;*/
+}
+
+.course-table table.timetable caption {
+  padding: 0px;
+  display: none;
+}
+.table-container table.timetable tfoot{
+  display: table-caption;
+}
+
+table.timetable caption h1 {
+  font-size: 18pt;
+  margin: 0;
+  font-weight: bold;
+  line-height: 2;
+}
+
+table.timetable caption p {
+  display: flex;
+  font-size: 10pt;
+  line-height: 2;
+  padding: 1mm;
+  justify-content: space-between;
+}
+table.timetable caption p > span{
+  flex: 0 1 auto;
+  max-width: 40%;
+  text-align: left
+}
+table.timetable caption p > span > label{
+  font-weight: bold;
+}
+
+
+table.timetable th,
+table.timetable td {
+  border: 0;
+  box-shadow: inset 0 0 0 0.1mm rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+table.timetable th{
+  font-size: 1.2em;
+}
+
+table.timetable thead th {
+  font-size: 1.3em;
+  height: 2em;
+  color: #EEEEEE;
+}
+
+table.timetable tbody td {
+  height:  90px;
+}
+
+table.timetable tbody.s3 td {
+  height:  70px;
+}
+
+.course-table table.timetable tfoot{
+  display: none;
+}
+.table-container table.timetable tfoot{
+  display: table-footer-group;
+}
+
+table.timetable tfoot td {
+  text-align: right;
+  padding-right: .2em;
+  color: #999 !important;
+}
+
+table.timetable tbody.s1 tr:first-child th:nth-child(2){
+  width: 2.4em;
+  color: #EEEEEE;
+}
+table.timetable tbody.s1 tr:first-child th:first-child,
+table.timetable tbody.s2 tr:first-child th:first-child,
+table.timetable tbody.s3 tr:first-child th:first-child {
+  width: 1.5em;
+  line-height: 3;
+  padding: .5em;
+  color: #EEEEEE;
+}
+table.timetable tbody.s1 tr:first-child th:first-child {
+  color: #EEEEEE;
+}
+table.timetable tbody.s2 tr:first-child th:first-child {
+  color: #EEEEEE;
+}
+table.timetable tbody.s3 tr:first-child th:first-child {
+  color: #EEEEEE;
+}
+table.timetable tbody.s1 tr:nth-child(2) th,
+table.timetable tbody.s1 tr:nth-child(2) td,
+table.timetable tbody.s2 tr:nth-child(2) th,
+table.timetable tbody.s2 tr:nth-child(2) td {
+  box-shadow: inset 0 0 0 0.1mm rgba(0, 0, 0, 0.2), inset 0 -0.4mm 0 -0.2mm rgba(0, 0, 0, 0.2), 0 0.4mm 0 -0.2mm rgba(0, 0, 0, 0.2) !important;
+  color: #EEEEEE;
+}
+
+table.timetable tbody.s2 tr:first-child th,
+table.timetable tbody.s2 tr:first-child td,
+table.timetable tbody.s3 tr:first-child th,
+table.timetable tbody.s3 tr:first-child td {
+  border-top:  2px solid #DDD;
+}
+
+table.timetable tbody th.span {
+  position: relative;
+  color: #EEEEEE;
+}
+
+table.timetable tbody th.span:before,
+table.timetable tbody th.span:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  padding-right: 0.5mm;
+  font-size: .7em;
+  color: #999;
+  text-align: right;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+table.timetable tbody th.span:before {
+  top: 1mm;
+  border-top: 0.2mm solid #DDD;
+}
+
+table.timetable tbody th.span:after {
+  bottom: 1mm;
+  border-bottom: 0.2mm solid #DDD;
+}
+
+table.timetable tbody th.span:before {
+  content: attr(data-start)
+}
+
+table.timetable tbody th.span:after {
+  content: attr(data-end)
+}
+/*
+.s1{
+  width: 100%;
+  height:35%;
+}
+
+.s2{
+  width: 100%;
+  height:35%;
+}
+
+.s3{
+  width: 100%;
+  height:30%;
+}*/
+
+.cell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 1.2;
+  background: #3B3B3B;
+  background-clip: padding-box !important;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  z-index: 10;
+  box-sizing: border-box;
+  box-shadow: inset -1px -1px 2px 0 rgba(0,0,0,0.3);
+  /*display: flex;*/
+  flex-direction: column;
+  transition: all ease 0.2s;
+  cursor: default;
+}
+.cell > .c {
+  flex: 1 0 0;
+  /*display: flex;*/
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  margin: -64% 0 0 0%;
+}
+@media screen {
+  .cell:hover {
+    transform: scale(1.1);
+    z-index: 100!important;
+    box-shadow: 3px 3px 30px rgba(0,0,0, 0.4);
+    border-color: #124FC0;
+    border-width: 2px;
+  }
+  .cell:hover .title {
+    margin: 1px 2px;
+  }
+}
+.cell > .c > * {
+  flex: 1 1 100%;
+}
+
+.cell[data-range="1"]{ height: 100%; }
+.cell[data-range="2"]{ height: 200%; }
+.cell[data-range="3"]{height: 300%;}
+.cell[data-range="4"]{ height: 400%; }
+.cell[data-range="5"]{ height: 500%; }
+
+.s1 tr:nth-child(1) .cell[data-range="6"]  {height:calc( 90px * 6 +  2px);}
+.s1 tr:nth-child(1) .cell[data-range="7"]  {height:calc( 90px * 7 +  2px);}
+.s1 tr:nth-child(1) .cell[data-range="8"]  {height:calc( 90px * 8 +  2px);}
+.s1 tr:nth-child(1) .cell[data-range="9"]  {height:calc( 90px * 9 +  2px);}
+.s1 tr:nth-child(1) .cell[data-range="10"] {height:calc( 90px * 10 +  2px);}
+.s1 tr:nth-child(1) .cell[data-range="11"] {height:calc( 90px * 10 +  2px * 2 +  70px * 1);}
+.s1 tr:nth-child(1) .cell[data-range="12"] {height:calc( 90px * 10 +  2px * 2 +  70px * 2);}
+.s1 tr:nth-child(1) .cell[data-range="13"] {height:calc( 90px * 10 +  2px * 2 +  70px * 3);}
+
+.s1 tr:nth-child(2) .cell[data-range="5"]  {height:calc( 90px * 5 +  2px);}
+.s1 tr:nth-child(2) .cell[data-range="6"]  {height:calc( 90px * 6 +  2px);}
+.s1 tr:nth-child(2) .cell[data-range="7"]  {height:calc( 90px * 7 +  2px);}
+.s1 tr:nth-child(2) .cell[data-range="8"]  {height:calc( 90px * 8 +  2px);}
+.s1 tr:nth-child(2) .cell[data-range="9"]  {height:calc( 90px * 9 +  2px);}
+.s1 tr:nth-child(2) .cell[data-range="10"] {height:calc( 90px * 9 +  2px * 2 +  70px * 1);}
+.s1 tr:nth-child(2) .cell[data-range="11"] {height:calc( 90px * 9 +  2px * 2 +  70px * 2);}
+.s1 tr:nth-child(2) .cell[data-range="12"] {height:calc( 90px * 9 +  2px * 2 +  70px * 3);}
+
+.s1 tr:nth-child(3) .cell[data-range="4"]  {height:calc( 90px * 4 +  2px);}
+.s1 tr:nth-child(3) .cell[data-range="5"]  {height:calc( 90px * 5 +  2px);}
+.s1 tr:nth-child(3) .cell[data-range="6"]  {height:calc( 90px * 6 +  2px);}
+.s1 tr:nth-child(3) .cell[data-range="7"]  {height:calc( 90px * 7 +  2px);}
+.s1 tr:nth-child(3) .cell[data-range="8"]  {height:calc( 90px * 8 +  2px);}
+.s1 tr:nth-child(3) .cell[data-range="9"]  {height:calc( 90px * 8 +  2px * 2 +  70px * 1);}
+.s1 tr:nth-child(3) .cell[data-range="10"] {height:calc( 90px * 8 +  2px * 2 +  70px * 2);}
+.s1 tr:nth-child(3) .cell[data-range="11"] {height:calc( 90px * 8 +  2px * 2 +  70px * 3);}
+
+.s1 tr:nth-child(4) .cell[data-range="3"]  {height:calc( 90px * 3 +  2px);}
+.s1 tr:nth-child(4) .cell[data-range="4"]  {height:calc( 90px * 4 +  2px);}
+.s1 tr:nth-child(4) .cell[data-range="5"]  {height:calc( 90px * 5 +  2px);}
+.s1 tr:nth-child(4) .cell[data-range="6"]  {height:calc( 90px * 6 +  2px);}
+.s1 tr:nth-child(4) .cell[data-range="7"]  {height:calc( 90px * 7 +  2px);}
+.s1 tr:nth-child(4) .cell[data-range="8"]  {height:calc( 90px * 7 +  2px * 2 +  70px * 1);}
+.s1 tr:nth-child(4) .cell[data-range="9"]  {height:calc( 90px * 7 +  2px * 2 +  70px * 2);}
+.s1 tr:nth-child(4) .cell[data-range="10"] {height:calc( 90px * 7 +  2px * 2 +  70px * 3);}
+
+.s1 tr:nth-child(5) .cell[data-range="2"]  {height:calc( 90px * 2 +  2px);}
+.s1 tr:nth-child(5) .cell[data-range="3"]  {height:calc( 90px * 3 +  2px);}
+.s1 tr:nth-child(5) .cell[data-range="4"]  {height:calc( 90px * 4 +  2px);}
+.s1 tr:nth-child(5) .cell[data-range="5"]  {height:calc( 90px * 5 +  2px);}
+.s1 tr:nth-child(5) .cell[data-range="6"]  {height:calc( 90px * 6 +  2px);}
+.s1 tr:nth-child(5) .cell[data-range="7"]  {height:calc( 90px * 6 +  2px * 2 +  70px * 1);}
+.s1 tr:nth-child(5) .cell[data-range="8"]  {height:calc( 90px * 6 +  2px * 2 +  70px * 2);}
+.s1 tr:nth-child(5) .cell[data-range="9"]  {height:calc( 90px * 6 +  2px * 2 +  70px * 3);}
+
+.s2 tr:nth-child(1) .cell[data-range="6"]  {height:calc( 90px * 5 +  2px +  70px * 1);}
+.s2 tr:nth-child(1) .cell[data-range="7"]  {height:calc( 90px * 5 +  2px +  70px * 2);}
+.s2 tr:nth-child(1) .cell[data-range="8"]  {height:calc( 90px * 5 +  2px +  70px * 3);}
+
+.s2 tr:nth-child(2) .cell[data-range="5"]  {height:calc( 90px * 4 +  2px +  70px * 1);}
+.s2 tr:nth-child(2) .cell[data-range="6"]  {height:calc( 90px * 4 +  2px +  70px * 2);}
+.s2 tr:nth-child(2) .cell[data-range="7"]  {height:calc( 90px * 4 +  2px +  70px * 2);}
+
+.s2 tr:nth-child(3) .cell[data-range="4"]  {height:calc( 90px * 3 +  2px +  70px * 1);}
+.s2 tr:nth-child(3) .cell[data-range="5"]  {height:calc( 90px * 3 +  2px +  70px * 2);}
+.s2 tr:nth-child(3) .cell[data-range="6"]  {height:calc( 90px * 3 +  2px +  70px * 3);}
+
+.s2 tr:nth-child(4) .cell[data-range="3"]  {height:calc( 90px * 2 +  2px +  70px * 1);}
+.s2 tr:nth-child(4) .cell[data-range="4"]  {height:calc( 90px * 2 +  2px +  70px * 2);}
+.s2 tr:nth-child(4) .cell[data-range="5"]  {height:calc( 90px * 2 +  2px +  70px * 3);}
+
+.s2 tr:nth-child(5) .cell[data-range="2"]  {height:calc( 90px * 1 +  2px +  70px * 1);}
+.s2 tr:nth-child(5) .cell[data-range="3"]  {height:calc( 90px * 1 +  2px +  70px * 2);}
+.s2 tr:nth-child(5) .cell[data-range="4"]  {height:calc( 90px * 1 +  2px +  70px * 3);}
+
+
+.cell .number {
+  font-size: 1em;
+  font-weight: normal;
+  color: #EEEEEE;
+}
+
+.cell .title {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 4px;
+  margin: 1px;
+  /* background: rgba(255,255,255, 0.7); */
+  color: #EEEEEE;
+  align-self: stretch;
+}
+
+.cell .teacher .name {
+  white-space: pre-wrap;
+  color: #EEEEEE;
+}
+
+.cell .teacher .name:after {
+  content: ',';
+}
+
+.cell .teacher .name:last-of-type:after {
+  content: '';
+}
+
+.cell .week {
+  white-space: nowrap;
+  margin-right: .2em;
+  color: #EEEEEE;
+}
+
+.cell .week:after {
+  content: '周';
+  color: #EEEEEE;
+}
+
+.cell .week.odd:after {
+  content: '单周';
+  color: #EEEEEE;
+}
+
+.cell .week.even:after {
+  content: '双周';
+  color: #EEEEEE;
+}
+
+.cell .classroom {
+  margin-top: .5mm;
+}
+
+.cell .classroom .name {
+  white-space: nowrap;
+  border-radius: 5mm;
+  padding: 1px 4px;
+  font-weight: bold;
+  color: #EEEEEE;
+  line-height: 1.5;
+}
+.cell *:empty {
+  display: none;
+}
+
+.cell .timespan {
+  white-space: nowrap;
+  color: #EEEEEE;
+}
+
+.cell .timespan:after {
+  content: '节';
+  color: #EEEEEE;
+}
+
+.cell .classes {
+  list-style: none;
+  font-size: .8em;
+  margin: 0;
+  padding: 0;
+}
+
+.cell[shim-start],
+.cell[shim-end] {
+  width: calc(100% - 1mm);
+  top: -0.5mm;
+}
+
+.cell[shim-start]:before,
+.cell[shim-end]:after {
+  content: '';
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.cell[shim-start="1"]:before,.cell[shim-end="1"]:after{height: calc( 90px - 1mm);}
+.cell[shim-start="2"]:before,.cell[shim-end="2"]:after{height: calc( 90px * 2 - 1mm);}
+.cell[shim-start="3"]:before,.cell[shim-end="3"]:after{height: calc( 90px * 3 - 1mm);}
+.cell[shim-start="4"]:before,.cell[shim-end="4"]:after{height: calc( 90px * 4 - 1mm);}
+
+.s3 .cell[shim-start="1"]:before,.s3 .cell[shim-end="1"]:after{height: calc( 70px - 1mm);}
+.s3 .cell[shim-start="2"]:before,.s3 .cell[shim-end="2"]:after{height: calc( 70px * 2 - 1mm);}
+
+.cell.cover {
+  width: calc(100% - 1mm);
+  top: 0.5mm;
+  left: auto;
+  right: -0.5mm;
+  z-index: 20;
+  box-shadow: inset -1px -1px 2px 0 rgba(0,0,0,0.3),inset 1px 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+@page {
+  margin: 0;
+  padding: 0;
+}
+
+@media print {
+  *{
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    -webkit-text-size-adjust: none;
+  }
+  .no-print {
+    display: none
+  }
+  body .container-fluid,
+  body .container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+  html,body{
+    width: 21cm;
+    height: 29.7cm;
+    margin:0;
+    padding: 0;
+  }
+  .row {
+    margin: 0;
+    display: none;
+  }
+  #table-content{
+    margin: 0 !important;
+  }
+  #table-content .row{
+    display: block;
+    page-break-after: always;
+  }
+  #table-content .no-print{
+    display: none;
+  }/*
+  table.timetable {
+    margin: 0 3mm;
+    width: calc(100% - 6mm);
+    --td-size-1: 80px;
+    --td-size-2: 50px;
+    --gap-size: 10px;
+  }*/
+  table.timetable caption {
+    display: table-caption !important;
+  }
+  table.timetable tfoot{
+    display: table-footer-group !important;
+  }
+  table.timetable th,
+  table.timetable td {
+    box-shadow: inset 0 0 0 0.1mm rgba(0, 0, 0, 0.2) !important;
+  }
+
+  table.timetable th{
+    font-size: 10pt;
+  }
+  table.timetable thead th {
+    font-size: 12pt;
+    height: 1cm;
+  }
+  table.timetable td{
+    font-size: 9pt;
+  }
+  table.timetable tbody th.span:before,
+  table.timetable tbody th.span:after {
+    font-size: 6pt;
+  }
+
+  .cell {
+    font-size: 7pt;
+    background-color: #eee !important;
+    box-shadow: inset 0 0 .3mm .1mm rgba(0,0,0,0.3) !important;
+  }
+  .cell .number {
+    font-size: 6pt;
+  }
+  .cell .teacher {
+    font-size: 7pt;
+  }
+  .cell .title {
+    font-size: 8pt;
+    background: rgba(0, 0, 0, 0.1) !important;
+    padding: 1mm;
+  }
+  .cell .week,
+  .cell .timespan{
+    font-size: 7pt;
+    display: inline-block;
+  }
+  .cell .week:after,
+  .cell .timespan:after {
+    font-size: 3pt;
+    vertical-align: super;
+  }
+  .cell .classroom {
+    font-size: 7pt;
+    line-height: 1.2;
+  }
+  .cell .classes {
+    font-size: 5pt;
+  }
+
+}
+
+@media print and (orientation: landscape), print and (min-width: 600px){
+  html,body{
+    height: 21cm;
+    width: 29.7cm;
+  }
+  table.timetable {
+    --td-size-1: 52px;
+    --td-size-2: 34px;
+    --gap-size: 4px;
+  }
+  table.timetable tbody th.span {
+    width: 4em;
+    text-align: left;
+    padding-left: .5em;
+  }
+
+  .cell>.c{
+    justify-content: space-around;
+  }
+  .c .number{order:1;}
+  .c .title{order:4;}
+  .c .classroom{order:5;}
+  .c .classes{order:6;}
+  .c .number{
+    flex: 0 0 auto;
+    order:1;
+  }
+  .cell .teacher{
+    order:2;
+    flex: 0 0 auto;
+  }
+  .cell .time{
+    order:3;
+    flex: 0 0 auto;
+  }
+
+  .c{
+    
+  }
+
+  .c .classes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .c .classes li{
+    margin: 0 0.2em;
+  }
+}
