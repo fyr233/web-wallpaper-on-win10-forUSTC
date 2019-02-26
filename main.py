@@ -32,19 +32,20 @@ def refreshdata():
     
 b1 = True
 b2 = True
+refreshdata()
 while True:
     time.sleep(0.2)
     localtime = time.localtime(time.time())
 
     
-    if localtime[5]==59 or localtime[5]==29:
+    if localtime[5]==0 or localtime[5]==30:
         if b1:
             render()
             b1 = False
     else:
         b1 = True
     
-    if localtime[4]%10==0 and b2:
+    if localtime[4]%10==0 and localtime[5]==0 and b2:
         if b2:
             refreshdata()
             b2 = False
