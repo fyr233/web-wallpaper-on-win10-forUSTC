@@ -1,0 +1,1 @@
+var netspeeddata = {'time': ['22:50'], 'speed': [113.25443745975343], 'ping': {'baidu.com': [75], 'ustc.edu.cn': [41]}};
