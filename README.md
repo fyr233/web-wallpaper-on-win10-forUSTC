@@ -22,16 +22,16 @@
 ### 1.win32gui与win32api
 
 首先，在命令行运行：
-'''python
+```python
 pip install win32gui
 pip install win32api
-'''
+```
 如果您能运行import win32gui和import win32api，那恭喜您可以跳过这一部分
 
 如果报错：
-'''python
+```python
 No module named 'win32gui'
-'''
+```
 看看这里：https://stackoverflow.com/questions/20113456/installing-win32gui-python-module
 
 ### 2.wkhtmltoimage
