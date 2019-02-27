@@ -5,6 +5,7 @@
 ## 这是什么
 
 这个项目包含了将网页设为windows壁纸的python３脚本，以及为USTC定制的网页壁纸
+
 桌面预览：（图片较大加载很慢）
 
 ![cmd-markdown-logo](https://github.com/fyr233/web-wallpaper-on-win10-forUSTC/blob/master/img/wallpaper.bmp)
