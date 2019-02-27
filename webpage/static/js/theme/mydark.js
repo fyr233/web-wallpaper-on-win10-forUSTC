@@ -22,11 +22,15 @@
     }
     echarts.registerTheme('mydark', {
         "color": [
-            "#ff342a",
+            "#e5554e",
+            "#6c9ca4",
             "#e69d87",
-            "#f0d950",
-            "#5fcc9a",
-            "#c74dbb"
+            "#70d6a7",
+            "#ea7e53",
+            "#eedd78",
+            "#53a953",
+            "#54c9ce",
+            "#587bb0"
         ],
         "backgroundColor": "#141414",
         "textStyle": {},
@@ -46,7 +50,7 @@
             },
             "lineStyle": {
                 "normal": {
-                    "width": 2
+                    "width": "3"
                 }
             },
             "symbolSize": 4,
@@ -61,7 +65,7 @@
             },
             "lineStyle": {
                 "normal": {
-                    "width": 2
+                    "width": "3"
                 }
             },
             "symbolSize": 4,
@@ -192,11 +196,15 @@
             "symbol": "circle",
             "smooth": false,
             "color": [
-                "#ff342a",
+                "#e5554e",
+                "#6c9ca4",
                 "#e69d87",
-                "#f0d950",
-                "#5fcc9a",
-                "#c74dbb"
+                "#70d6a7",
+                "#ea7e53",
+                "#eedd78",
+                "#53a953",
+                "#54c9ce",
+                "#587bb0"
             ],
             "label": {
                 "normal": {
@@ -211,7 +219,7 @@
                 "normal": {
                     "areaColor": "#eeeeee",
                     "borderColor": "#444444",
-                    "borderWidth": 0.5
+                    "borderWidth": "1"
                 },
                 "emphasis": {
                     "areaColor": "rgba(255,215,0,0.8)",
@@ -237,7 +245,7 @@
                 "normal": {
                     "areaColor": "#eeeeee",
                     "borderColor": "#444444",
-                    "borderWidth": 0.5
+                    "borderWidth": "1"
                 },
                 "emphasis": {
                     "areaColor": "rgba(255,215,0,0.8)",
@@ -474,9 +482,10 @@
         },
         "visualMap": {
             "color": [
-                "#bf444c",
-                "#d88273",
-                "#f6efa6"
+                "#00ff08",
+                "#82f030",
+                "#f7e921",
+                "#f33e38"
             ]
         },
         "dataZoom": {

@@ -10,20 +10,11 @@
   margin: 0% 0 0 0%;
 }
 
-.test1{
-  position:absolute;
-  width:1000px;
-  height:800px;
-  top:3%;
-  left:55%;
-  margin: 0% 0 0 0%;
-}
-
 .timetable{
   position:absolute;
   width:1400px;
   top:3%;
-  left:12.5%;
+  left:5%;
   margin: 0% 0 0 0%;
   background:#141414;
 }
@@ -38,11 +29,19 @@
 
 .netspeed{
   position:absolute;
-  width:1300px;
+  width:1350px;
   height:600px;
-  top:65%;
-  left:65%;
+  top:3%;
+  left:45%;
   margin: 0% 0 0 0%;
+}
+
+.weather{
+  position:absolute;
+  top:34%;
+  left:45%;
+  margin: 0% 0 0 0%;
+  background:#141414;
 }
 
 /*以下是课表css*/
@@ -742,4 +741,587 @@ ul.article-list li .date, ul.article-list li .views {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/*以下是天气css*/
+ul.t {
+  height: 283px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.clearfix {
+  zoom: 2;
+}
+
+ul.t li.sky.lv1 {
+  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=rgba(14, 127, 223, 0),endColorStr=rgba(105, 184, 240, 0.21176470588235294));
+  background: -ms-linear-gradient(top,rgba(14, 127, 223, 0),rgba(105, 184, 240, 0.21176470588235294));
+  background: -moz-linear-gradient(top,rgba(14, 127, 223, 0),rgba(105, 184, 240, 0.21176470588235294));
+  background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(14, 127, 223, 0)),to(rgba(105, 184, 240, 0.21176470588235294)));
+  background: -o-linear-gradient(top,rgba(14, 127, 223, 0),rgba(105, 184, 240, 0.21176470588235294));
+}
+
+ul.t li.sky.lv2 {
+  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=rgba(80, 178, 251, 0),endColorStr=rgba(166, 212, 246, 0.2));
+  background: -ms-linear-gradient(top,rgba(80, 178, 251, 0),rgba(166, 212, 246, 0.2));
+  background: -moz-linear-gradient(top,rgba(80, 178, 251, 0),rgba(166, 212, 246, 0.2));
+  background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(80, 178, 251, 0)),to(rgba(166, 212, 246, 0.2)));
+  background: -o-linear-gradient(top,rgba(80, 178, 251, 0),rgba(166, 212, 246, 0.2));
+}
+
+ul.t li.sky.lv3 {
+  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=rgba(136,169,202,0),endColorStr=rgba(188,211,227,0.2));
+  background: -ms-linear-gradient(top,rgba(136,169,202,0),rgba(188,211,227,0.2));
+  background: -moz-linear-gradient(top,rgba(136,169,202,0),rgba(188,211,227,0.2));
+  background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(136,169,202,0)),to(rgba(188,211,227,0.2)));
+  background: -o-linear-gradient(top,rgba(136,169,202,0)a,rgba(188,211,227,0.2));
+}
+
+ul.t li.sky.lv4 {
+  FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=rgba(153, 150, 145, 0),endColorStr=rgba(197, 197, 197, 0.2));
+  background: -ms-linear-gradient(top,rgba(153, 150, 145, 0),rgba(197, 197, 197, 0.2));
+  background: -moz-linear-gradient(top,rgba(153, 150, 145, 0),rgba(197, 197, 197, 0.2));
+  background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(153, 150, 145, 0)),to(rgba(197, 197, 197, 0.2)));
+  background: -o-linear-gradient(top,rgba(153, 150, 145, 0),rgba(197, 197, 197, 0.2));
+}
+
+ul.t li.sky {
+  border: 1px solid #fff;
+  margin-right: 0;
+  width: 93px;
+  height: 274px;
+  color: #fff;
+}
+
+ul.t li {
+  position: relative;
+  height: 242px;
+  float: left;
+  background: #f2f9ff;
+  border: 2px solid #f6fbff;
+  width: 89px;
+  text-align: center;
+  margin-right: 2px;
+  cursor: pointer;
+  padding-bottom: 6px;
+  list-style:none;
+}
+
+ul.t li h1 {
+  height: 34px;
+  line-height: 34px;
+  font-size: 13px;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
+ul.t li.sky big {
+  background-image: url(../img/white30.png);
+}
+
+ul.t li big {
+  margin-top: 4px;
+}
+
+big.d0,big.d00 {
+  background-position: 0 0
+}
+
+big.d1,big.d01 {
+  background-position: -80px 0
+}
+
+big.d2,big.d02 {
+  background-position: -160px 0
+}
+
+big.d3,big.d03 {
+  background-position: -240px 0
+}
+
+big.d4,big.d04 {
+  background-position: -320px 0
+}
+
+big.d5,big.d05 {
+  background-position: -400px 0
+}
+
+big.d6,big.d06 {
+  background-position: -480px 0
+}
+
+big.d7,big.d07 {
+  background-position: -560px 0
+}
+
+big.d8,big.d08 {
+  background-position: -640px 0
+}
+
+big.d9,big.d09 {
+  background-position: 0 -80px
+}
+
+big.d10 {
+  background-position: -80px -80px
+}
+
+big.d11 {
+  background-position: -160px -80px
+}
+
+big.d12 {
+  background-position: -240px -80px
+}
+
+big.d13 {
+  background-position: -320px -80px
+}
+
+big.d14 {
+  background-position: -400px -80px
+}
+
+big.d15 {
+  background-position: -480px -80px
+}
+
+big.d16 {
+  background-position: -560px -80px
+}
+
+big.d17 {
+  background-position: -640px -80px
+}
+
+big.d18 {
+  background-position: 0 -160px
+}
+
+big.d19 {
+  background-position: -80px -160px
+}
+
+big.d20 {
+  background-position: -160px -160px
+}
+
+big.d21 {
+  background-position: -240px -160px
+}
+
+big.d22 {
+  background-position: -320px -160px
+}
+
+big.d23 {
+  background-position: -400px -160px
+}
+
+big.d24 {
+  background-position: -480px -160px
+}
+
+big.d25 {
+  background-position: -560px -160px
+}
+
+big.d26 {
+  background-position: -640px -160px
+}
+
+big.d27 {
+  background-position: 0 -240px
+}
+
+big.d28 {
+  background-position: -80px -240px
+}
+
+big.d29 {
+  background-position: -160px -240px
+}
+
+big.d30 {
+  background-position: -240px -240px
+}
+
+big.d31 {
+  background-position: -320px -240px
+}
+
+big.d32 {
+  background-position: -400px -240px
+}
+
+big.d33 {
+  background-position: -480px -240px
+}
+
+big.d53 {
+  background-position: -560px -240px
+}
+
+big.d57 {
+  background-position: -720px 0
+}
+
+big.d32 {
+  background-position: -720px -80px
+}
+
+big.d49 {
+  background-position: -720px -160px
+}
+
+big.d58 {
+  background-position: -720px -240px
+}
+
+big.d54 {
+  background-position: -800px 0
+}
+
+big.d55 {
+  background-position: -800px -80px
+}
+
+big.d56 {
+  background-position: -800px -160px
+}
+
+big.d301 {
+  background-position: -880px 0
+}
+
+big.d302 {
+  background-position: -880px -80px
+}
+
+big.n0,big.n00 {
+  background-position: 0 -320px
+}
+
+big.n1,big.n01 {
+  background-position: -80px -320px
+}
+
+big.n2,big.n02 {
+  background-position: -160px -320px
+}
+
+big.n3,big.n03 {
+  background-position: -240px -320px
+}
+
+big.n4,big.n04 {
+  background-position: -320px -320px
+}
+
+big.n5,big.n05 {
+  background-position: -400px -320px
+}
+
+big.n6,big.n06 {
+  background-position: -480px -320px
+}
+
+big.n7,big.n07 {
+  background-position: -560px -320px
+}
+
+big.n8,big.n08 {
+  background-position: -640px -320px
+}
+
+big.n9,big.n09 {
+  background-position: 0 -400px
+}
+
+big.n10 {
+  background-position: -80px -400px
+}
+
+big.n11 {
+  background-position: -160px -400px
+}
+
+big.n12 {
+  background-position: -240px -400px
+}
+
+big.n13 {
+  background-position: -320px -400px
+}
+
+big.n14 {
+  background-position: -400px -400px
+}
+
+big.n15 {
+  background-position: -480px -400px
+}
+
+big.n16 {
+  background-position: -560px -400px
+}
+
+big.n17 {
+  background-position: -640px -400px
+}
+
+big.n18 {
+  background-position: 0 -480px
+}
+
+big.n19 {
+  background-position: -80px -480px
+}
+
+big.n20 {
+  background-position: -160px -480px
+}
+
+big.n21 {
+  background-position: -240px -480px
+}
+
+big.n22 {
+  background-position: -320px -480px
+}
+
+big.n23 {
+  background-position: -400px -480px
+}
+
+big.n24 {
+  background-position: -480px -480px
+}
+
+big.n25 {
+  background-position: -560px -480px
+}
+
+big.n26 {
+  background-position: -640px -480px
+}
+
+big.n27 {
+  background-position: 0 -560px
+}
+
+big.n28 {
+  background-position: -80px -560px
+}
+
+big.n29 {
+  background-position: -160px -560px
+}
+
+big.n30 {
+  background-position: -240px -560px
+}
+
+big.n31 {
+  background-position: -320px -560px
+}
+
+big.n32 {
+  background-position: -400px -560px
+}
+
+big.n33 {
+  background-position: -480px -560px
+}
+
+big.n53 {
+  background-position: -560px -560px
+}
+
+big.n57 {
+  background-position: -720px -320px
+}
+
+big.n32 {
+  background-position: -720px -400px
+}
+
+big.n49 {
+  background-position: -720px -480px
+}
+
+big.n58 {
+  background-position: -720px -560px
+}
+
+big.n54 {
+  background-position: -800px -320px
+}
+
+big.n55 {
+  background-position: -800px -400px
+}
+
+big.n56 {
+  background-position: -800px -480px
+}
+
+big.n301 {
+  background-position: -880px -320px
+}
+
+big.n302 {
+  background-position: -880px -400px
+}
+
+big.jpg30 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue30.png);
+  height: 30px;
+  width: 31px
+}
+
+big.png30 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue30.png);
+  height: 30px;
+  width: 31px
+}
+
+big.jpg80 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue80.png);
+  height: 80px;
+  width: 80px
+}
+
+big.png40 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue30.png);
+  height: 30px;
+  width: 30px
+}
+
+big.png80 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue80.png);
+  height: 80px;
+  width: 80px
+}
+
+.around li:hover big.jpg30 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/white30.png);
+  height: 30px;
+  width: 31px
+}
+
+.on big.jpg80 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue80.png);
+  height: 80px;
+  width: 80px
+}
+
+.sk big.jpg80 {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/png/blue80.png);
+  height: 80px;
+  width: 80px
+}
+
+big {
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: -640px 240px;
+  display: block;
+}
+
+ul.t li .wea {
+  font-size: 13px;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
+  line-height: 19px;
+  height: 36px;
+  overflow: hidden;
+  margin-top: 12px;
+  padding: 0 5px;
+}
+
+ul.t li .tem {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 5px;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
+ul.t li.sky .tem span {
+  color: #fff;
+}
+
+ul.t li .tem i {
+  display: inline-block;
+  background: 0;
+}
+
+.tem i, ul.t li .win em {
+  font-style: normal;
+}
+
+ul.t li .win {
+  margin-top: 0;
+}
+
+ul.t li .win em {
+  height: 24px;
+  display: block;
+  margin-top: 1px;
+}
+
+ul.t li.sky .win em span.S {
+  background-position: -200px -22px
+}
+
+ul.t li.sky .win em span.N {
+  background-position: -200px -46px
+}
+
+ul.t li.sky .win em span.W {
+  background-position: -200px -91px
+}
+
+ul.t li.sky .win em span.E {
+  background-position: -200px -69px
+}
+
+ul.t li.sky .win em span.NE {
+  background-position: -200px -164px
+}
+
+ul.t li.sky .win em span.NW {
+  background-position: -200px -188px
+}
+
+ul.t li.sky .win em span.SE {
+  background-position: -200px -115px
+}
+
+ul.t li.sky .win em span.SW {
+  background-position: -200px -138px
+}
+
+ul.t li .win em span {
+  background-position: -84px 0;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.win span, .c7d .slid, .livezs i, #weatherChart .tabs h2 i, .sevenDay .zt, .sevenDay .zb, .btn .r i {
+  background-image: url(https://i.tq121.com.cn/i/weather2015/city/iconall.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+ul.t li .win i {
+  background: 0;
+  font-size: 12px;
+  margin-top: 6px;
+  display: block;
+  font-family: 'YH', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Arial', 'sans-serif';
 }

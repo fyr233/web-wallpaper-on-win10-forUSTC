@@ -45,7 +45,7 @@ while True:
     else:
         b1 = True
     
-    if localtime[4]%1==0 and localtime[5]==0 and b2:
+    if localtime[4]%2==0 and localtime[5]==0 and b2:
         if b2:
             refreshdata()
             b2 = False
