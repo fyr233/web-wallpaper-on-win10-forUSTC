@@ -1209,7 +1209,7 @@ big.png80 {
 }
 
 .around li:hover big.jpg30 {
-  background-image: url(https://i.tq121.com.cn/i/weather2015/png/white30.png);
+  background-image: url(../img/white30.png);
   height: 30px;
   width: 31px
 }
@@ -1313,7 +1313,7 @@ ul.t li .win em span {
 }
 
 .win span, .c7d .slid, .livezs i, #weatherChart .tabs h2 i, .sevenDay .zt, .sevenDay .zb, .btn .r i {
-  background-image: url(https://i.tq121.com.cn/i/weather2015/city/iconall.png);
+  background-image: url(../img/iconall.png);
   background-repeat: no-repeat;
   display: block;
 }
