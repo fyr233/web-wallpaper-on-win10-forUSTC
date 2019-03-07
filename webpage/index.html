@@ -3,7 +3,6 @@
   
   <head>
     <meta charset="utf-8">
-    
     <!-- 引入 ECharts 文件 -->
     <script src="static/js/echarts.js"></script>
     <script src="static/js/theme/mydark.js"></script>
@@ -12,24 +11,34 @@
     <script src="static/js/chart/map.js"></script>
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
     <!--<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">-->
-    <style>
-            @font-face {
-              font-family: 'YH';
-              src: url('static/css/msyh.ttc'),
-                   url('static/css/msyhbd.ttc');
-            }
-    </style>
-    </head>
+    <style>@font-face { font-family: 'YH'; src: url('static/css/msyh.ttc'), url('static/css/msyhbd.ttc'); }</style></head>
   
-  <body bgcolor="#181818" >
-    
-    <div class="clock" id="clock" ></div>
+  <body bgcolor="#181818">
+    <div class="clock" id="clock"></div>
     <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-
-    <div class="timetable" >
+    <div class="timetable">
       <div class="course-table">
         <div id="18098">
           <table class="timetable" id="18098">
+            <caption>
+              <div>
+                <h1 class="text-center tableTopName">中国科学技术大学学生课表</h1>
+                <p class="table-head-info">
+                  <span>
+                    <label>学院：</label>
+                    <span>近代物理系</span></span>
+                  <span>
+                    <label>专业：</label>
+                    <span>20301应用物理学</span></span>
+                  <span>
+                    <label>方向：</label>
+                    <span>2030203物理电子学</span></span>
+                  <span>
+                    <label>姓名：</label>
+                    <span class="export-title">PB16001785方奕然</span></span>
+                </p>
+              </div>
+            </caption>
             <thead>
               <tr>
                 <th colspan="2"></th>
@@ -43,7 +52,7 @@
             </thead>
             <tfoot>
               <tr>
-                <td colspan="9">打印时间：2019/2/25</td></tr>
+                <td colspan="9">打印时间：2019/3/7</td></tr>
             </tfoot>
             <tbody class="s1">
               <tr class="1">
@@ -51,9 +60,8 @@
                 <th scope="row" class="span" data-start="07:50" data-end="08:35">1</th>
                 <td></td>
                 <td>
-                  <div class="cell " data-range="2" >
-                    
-                    <div class="c" >
+                  <div class="cell " data-range="2">
+                    <div class="c">
                       <h4 class="number">022118.01</h4>
                       <h3 class="title">固体物理B</h3>
                       <p class="teacher">
@@ -64,7 +72,6 @@
                       <p class="classroom">
                         <span class="name">2421&nbsp;</span></p>
                     </div>
-                    
                   </div>
                 </td>
                 <td>
@@ -84,7 +91,21 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>
+                  <div class="cell " data-range="4">
+                    <div class="c">
+                      <h4 class="number">011S20.01</h4>
+                      <h3 class="title">人工智能原理</h3>
+                      <p class="teacher">
+                        <span class="name">王上飞</span></p>
+                      <p class="time">
+                        <span class="week ">2-16</span>
+                        <span class="timespan">1,2,3,4</span></p>
+                      <p class="classroom">
+                        <span class="name">1201&nbsp;</span></p>
+                    </div>
+                  </div>
+                </td>
                 <td></td>
               </tr>
               <tr class="2">
@@ -212,7 +233,21 @@
                     </div>
                   </div>
                 </td>
-                <td></td>
+                <td>
+                  <div class="cell " data-range="4">
+                    <div class="c">
+                      <h4 class="number">011S18.01</h4>
+                      <h3 class="title">数据库概论</h3>
+                      <p class="teacher">
+                        <span class="name">刘淇</span></p>
+                      <p class="time">
+                        <span class="week ">2-16</span>
+                        <span class="timespan">6,7,8,9</span></p>
+                      <p class="classroom">
+                        <span class="name">1201&nbsp;</span></p>
+                    </div>
+                  </div>
+                </td>
                 <td></td>
               </tr>
               <tr class="7">
@@ -312,7 +347,21 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>
+                  <div class="cell " data-range="3">
+                    <div class="c">
+                      <h4 class="number">011S19.01</h4>
+                      <h3 class="title">计算机网络</h3>
+                      <p class="teacher">
+                        <span class="name">苗付友</span></p>
+                      <p class="time">
+                        <span class="week ">2-16</span>
+                        <span class="timespan">11,12,13</span></p>
+                      <p class="classroom">
+                        <span class="name">1201&nbsp;</span></p>
+                    </div>
+                  </div>
+                </td>
                 <td></td>
               </tr>
               <tr class="12">
@@ -340,11 +389,11 @@
         </div>
       </div>
     </div>
-
-    <div class = "jwcnews" >
-    <div class="wrapper front-page-main">
-      <div class="container front-page-a">
-        <section class="notice-fp">
+    
+    <div class="jwcnews">
+      <div class="wrapper front-page-main">
+        <div class="container front-page-a">
+          <section class="notice-fp">
 	<header>
 <h2><a href="https://www.teach.ustc.edu.cn/category/notice">教务处通知</a></h2>
 	<div style="height:3px;width:100%;display: block;background:#EEEEEE ;clear: both;"></div>
@@ -360,6 +409,26 @@
     <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-teaching/9160.html">2019年春季学期本科生选课通知</a></span>
     <span class="date" data-date="2019-01-09 17:31"><i class="fa fa-clock-o"></i> 01-09 17:31</span>
     </li>
+        <li class="post-9285 post type-post status-publish format-standard hentry category-notice-info">
+    <span class="cat-tags"><a class="cat-tag notice-info" href="https://www.teach.ustc.edu.cn/category/notice/notice-info">信息</a></span>
+    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-info/9285.html">关于召开2019春季学期助教培训暨2018秋季学期优秀助教表彰会议的通知</a></span>
+    <span class="date" data-date="2019-03-07 16:00"><i class="fa fa-clock-o"></i> 03-07 16:00</span>
+    </li>
+        <li class="post-9276 post type-post status-publish format-standard hentry category-xchg-hk-tw category-notice-exchange">
+    <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
+    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9276.html">关于2019年秋季学期赴港台地区高校进行课程学习学生选拔工作的通知</a></span>
+    <span class="date" data-date="2019-03-06 11:20"><i class="fa fa-clock-o"></i> 03-06 11:20</span>
+    </li>
+        <li class="post-9273 post type-post status-publish format-standard hentry category-xchg-hk-tw category-notice-exchange">
+    <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
+    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9273.html">关于2019年赴台湾清华大学进行暑期研究项目的学生选拔工作通知</a></span>
+    <span class="date" data-date="2019-03-06 11:11"><i class="fa fa-clock-o"></i> 03-06 11:11</span>
+    </li>
+        <li class="post-9271 post type-post status-publish format-standard hentry category-xchg-europe category-xchg-americas category-xchg-australia category-xchg-asia category-notice-exchange">
+    <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
+    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9271.html">关于申请2019年夏季学期校级国际暑期课程项目的通知(第二批)已发布</a></span>
+    <span class="date" data-date="2019-03-04 12:25"><i class="fa fa-clock-o"></i> 03-04 12:25</span>
+    </li>
         <li class="post-9264 post type-post status-publish format-standard hentry category-xchg-europe category-notice-exchange">
     <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
     <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9264.html">关于2019年夏季学期牛津大学暑期研究实习项目的通知已发布</a></span>
@@ -370,79 +439,72 @@
     <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-teaching/9255.html">双学位缴费通知</a></span>
     <span class="date" data-date="2019-02-21 16:50"><i class="fa fa-clock-o"></i> 02-21 16:50</span>
     </li>
-        <li class="post-9241 post type-post status-publish format-standard hentry category-xchg-oversea category-notice-exchange">
-    <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
-    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9241.html">关于申请2019年夏季学期校级国际暑期课程项目的通知已发布</a></span>
-    <span class="date" data-date="2019-01-22 11:33"><i class="fa fa-clock-o"></i> 01-22 11:33</span>
-    </li>
-        <li class="post-9230 post type-post status-publish format-standard hentry category-xchg-europe category-xchg-csc category-notice-exchange">
-    <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
-    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9230.html">关于2019年夏季学期CSC优本项目-荷兰特文特大学研究实习项目的通知已发布</a></span>
-    <span class="date" data-date="2019-01-21 16:59"><i class="fa fa-clock-o"></i> 01-21 16:59</span>
-    </li>
-        <li class="post-9225 post type-post status-publish format-standard hentry category-xchg-americas category-notice-exchange">
-    <span class="cat-tags"><a class="cat-tag notice-exchange" href="https://www.teach.ustc.edu.cn/category/notice/notice-exchange">交流</a></span>
-    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-exchange/9225.html">关于申请2019年夏季学期加拿大麦克马斯特大学暑期研究实习项目的通知已发布</a></span>
-    <span class="date" data-date="2019-01-21 11:04"><i class="fa fa-clock-o"></i> 01-21 11:04</span>
-    </li>
-        <li class="post-9214 post type-post status-publish format-standard hentry category-notice-teaching">
-    <span class="cat-tags"><a class="cat-tag notice-teaching" href="https://www.teach.ustc.edu.cn/category/notice/notice-teaching">教学</a></span>
-    <span class="post"><a href="https://www.teach.ustc.edu.cn/notice/notice-teaching/9214.html">2019年春季学期选修MOOCs课程的通知</a></span>
-    <span class="date" data-date="2019-01-19 12:24"><i class="fa fa-clock-o"></i> 01-19 12:24</span>
-    </li>
       </ul>
     </section>
-      
-        
+        </div>
       </div>
-      
     </div>
-    </div>
-
-    <div class="netspeed" id="netspeed" ></div>
-
+    <div class="netspeed" id="netspeed"></div>
     <div class="weather">
-        <ul class="t clearfix">
-<li class="sky skyid lv3 on">
-<h1>1日（今天）</h1>
-<big class="png40"></big>
-<big class="png40 n07"></big>
-<p title="小雨" class="wea">小雨</p>
+      <ul class="t clearfix">
+<li class="sky skyid lv2 on">
+<h1>7日（今天）</h1>
+<big class="png40 d01"></big>
+<big class="png40 n01"></big>
+<p title="多云" class="wea">多云</p>
 <p class="tem">
-<i>6℃</i>
+<span>12</span>/<i>2℃</i>
 </p>
 <p class="win">
 <em>
 <span title="东北风" class="NE"></span>
+<span title="东风" class="E"></span>
 </em>
-<i>3-4级</i>
+<i><3级</i>
 </p>
 <div class="slid"></div>
 </li>
 <li class="sky skyid lv3">
-<h1>2日（明天）</h1>
-<big class="png40 d07"></big>
-<big class="png40 n02"></big>
-<p title="小雨转阴" class="wea">小雨转阴</p>
-<p class="tem">
-<span>7℃</span>/<i>3℃</i>
-</p>
-<p class="win">
-<em>
-<span title="东北风" class="NE"></span>
-<span title="无持续风向" class="NNW"></span>
-</em>
-<i>3-4级转<3级</i>
-</p>
-<div class="slid"></div>
-</li>
-<li class="sky skyid lv3">
-<h1>3日（后天）</h1>
+<h1>8日（明天）</h1>
 <big class="png40 d02"></big>
-<big class="png40 n00"></big>
-<p title="阴转晴" class="wea">阴转晴</p>
+<big class="png40 n01"></big>
+<p title="阴转多云" class="wea">阴转多云</p>
 <p class="tem">
-<span>8℃</span>/<i>2℃</i>
+<span>11</span>/<i>6℃</i>
+</p>
+<p class="win">
+<em>
+<span title="东风" class="E"></span>
+<span title="北风" class="N"></span>
+</em>
+<i><3级</i>
+</p>
+<div class="slid"></div>
+</li>
+<li class="sky skyid lv3">
+<h1>9日（后天）</h1>
+<big class="png40 d07"></big>
+<big class="png40 n01"></big>
+<p title="小雨转多云" class="wea">小雨转多云</p>
+<p class="tem">
+<span>13</span>/<i>4℃</i>
+</p>
+<p class="win">
+<em>
+<span title="西北风" class="NW"></span>
+<span title="西北风" class="NW"></span>
+</em>
+<i><3级</i>
+</p>
+<div class="slid"></div>
+</li>
+<li class="sky skyid lv2">
+<h1>10日（周日）</h1>
+<big class="png40 d01"></big>
+<big class="png40 n01"></big>
+<p title="多云" class="wea">多云</p>
+<p class="tem">
+<span>14</span>/<i>6℃</i>
 </p>
 <p class="win">
 <em>
@@ -454,68 +516,51 @@
 <div class="slid"></div>
 </li>
 <li class="sky skyid lv2">
-<h1>4日（周一）</h1>
-<big class="png40 d01"></big>
-<big class="png40 n02"></big>
-<p title="多云转阴" class="wea">多云转阴</p>
-<p class="tem">
-<span>13℃</span>/<i>3℃</i>
-</p>
-<p class="win">
-<em>
-<span title="东风" class="E"></span>
-<span title="东风" class="E"></span>
-</em>
-<i><3级</i>
-</p>
-<div class="slid"></div>
-</li>
-<li class="sky skyid lv3">
-<h1>5日（周二）</h1>
-<big class="png40 d07"></big>
-<big class="png40 n01"></big>
-<p title="小雨转多云" class="wea">小雨转多云</p>
-<p class="tem">
-<span>12℃</span>/<i>5℃</i>
-</p>
-<p class="win">
-<em>
-<span title="东风" class="E"></span>
-<span title="北风" class="N"></span>
-</em>
-<i>3-4级转<3级</i>
-</p>
-<div class="slid"></div>
-</li>
-<li class="sky skyid lv3">
-<h1>6日（周三）</h1>
+<h1>11日（周一）</h1>
 <big class="png40 d01"></big>
 <big class="png40 n01"></big>
 <p title="多云" class="wea">多云</p>
 <p class="tem">
-<span>16℃</span>/<i>3℃</i>
+<span>17</span>/<i>5℃</i>
 </p>
 <p class="win">
 <em>
-<span title="东北风" class="NE"></span>
+<span title="西北风" class="NW"></span>
+<span title="西南风" class="SW"></span>
+</em>
+<i><3级</i>
+</p>
+<div class="slid"></div>
+</li>
+<li class="sky skyid lv2">
+<h1>12日（周二）</h1>
+<big class="png40 d01"></big>
+<big class="png40 n01"></big>
+<p title="多云" class="wea">多云</p>
+<p class="tem">
+<span>18</span>/<i>5℃</i>
+</p>
+<p class="win">
+<em>
+<span title="南风" class="S"></span>
 <span title="东北风" class="NE"></span>
 </em>
 <i><3级</i>
 </p>
 <div class="slid"></div>
 </li>
-<li class="sky skyid lv3">
-<h1>7日（周四）</h1>
-<big class="png40 d02"></big>
-<big class="png40 n02"></big>
-<p title="阴" class="wea">阴</p>
+<li class="sky skyid lv2">
+<h1>13日（周三）</h1>
+<big class="png40 d01"></big>
+<big class="png40 n01"></big>
+<p title="多云" class="wea">多云</p>
 <p class="tem">
-<span>11℃</span>/<i>2℃</i>
+<span>20</span>/<i>7℃</i>
 </p>
 <p class="win">
 <em>
-<span title="东风" class="E"></span>
-<span title="东风" class="E"></span>
+<span title="东南风" class="SE"></span>
+<span title="西北风" class="NW"></span>
 </em>
 <i><3级</i>
 </p>
@@ -523,7 +568,6 @@
 </li>
 </ul>
     </div>
-
     <script src="static/js/netspeedandping.js"></script>
     <script src="static/js/draw.js"></script>
   </body>
