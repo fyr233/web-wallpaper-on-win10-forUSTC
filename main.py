@@ -28,7 +28,10 @@ def render():
     print('set wallpaper time used:', time.clock() - t0)
 
 def refreshdata():
-    getdata.getdata()
+    try:
+        getdata.getdata()
+    except:
+        print('get data error')
     
 b1 = True
 b2 = True
