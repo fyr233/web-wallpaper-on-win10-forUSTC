@@ -63,7 +63,7 @@ def get_net_speed():
     netspeed_log['time'].append(time.strftime("%H:%M", time.localtime()))
     netspeed_log['speed'].append(speed)
 
-    if len(netspeed_log)>300:
+    if len(netspeed_log['time'])>300:
         netspeed_log.pop(0)
     with open('webpage/static/js/netspeedandping.js', 'w', encoding='UTF-8') as dataf:
         dataf.write('var netspeeddata = '+str(netspeed_log)+';')
