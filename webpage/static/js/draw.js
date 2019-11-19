@@ -34,7 +34,7 @@ Chart_netspeed.setOption(option = {
         trigger: 'axis'
     },
     legend: {
-        data:['网速', '', 'ping-baidu.com', '', 'ping-ustc.edu.cn'],
+        data:['带宽', '', 'ping-baidu.com', '', 'ping-ustc.edu.cn'],
         textStyle:{
             fontSize: 25,
             fontFamily: "'Microsoft YaHei', '微软雅黑', Arial, Verdana, 'sans-serif'",
@@ -93,7 +93,7 @@ Chart_netspeed.setOption(option = {
     animation: false,
     series : [
         {
-            name:'网速',
+            name:'带宽',
             type:'line',
             yAxisIndex: 0,
             smooth:true,

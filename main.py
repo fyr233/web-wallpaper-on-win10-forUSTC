@@ -23,9 +23,9 @@ def render():
     cmd += ' '+htmlpath+' '+bmppath
     p = subprocess.Popen(cmd, stdout = subprocess.PIPE, shell = True)
     p.wait()
-    t0 = time.clock()
+    t0 = time.perf_counter()
     win32gui.SystemParametersInfo(win32con.SPI_SETDESKWALLPAPER, os.getcwd()+'/'+bmppath, 1+2)
-    print('set wallpaper time used:', time.clock() - t0)
+    print('set wallpaper time used:', time.perf_counter() - t0)
 
 def refreshdata():
     try:
