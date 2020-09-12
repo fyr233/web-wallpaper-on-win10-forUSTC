@@ -20,6 +20,7 @@ def render():
     cmd += ' --width '+str(imgwidth)
     cmd += ' --height '+str(imgheight)
     cmd += ' --javascript-delay '+str(200)
+    cmd += ' --enable-local-file-access'
     cmd += ' '+htmlpath+' '+bmppath
     p = subprocess.Popen(cmd, stdout = subprocess.PIPE, shell = True)
     p.wait()
