@@ -249,6 +249,23 @@ table.timetable tbody th.span:after {
   transition: all ease 0.2s;
   cursor: default;
 }
+.cell > .start,
+.cell > .end {
+  position: absolute;
+  font-size: 1.0em;
+  padding: 3px;
+  border-radius: 6px 0 6px 0;
+  opacity: .5;
+
+}
+.cell > .start{
+  top: 0;
+  left: 0;
+}
+.cell > .end {
+  bottom: 0;
+  right: 0;
+}
 .cell > .c {
   flex: 1 0 0;
   /*display: flex;*/
@@ -259,7 +276,7 @@ table.timetable tbody th.span:after {
   align-content: center;
   border-radius: 8px;
   position: absolute;
-  top: 70%;
+  top: 76%;
   left: 0%;
   height: 100%;
   width: 100%;
